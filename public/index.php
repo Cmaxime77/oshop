@@ -7,6 +7,8 @@ require '../vendor/autoload.php';
 // grâce à la réécriture d'URL
 // (donc la présence d'un .htaccess dans ce dossier)
 
+require __DIR__.'/../app/utils/DBData.php';
+require __DIR__.'/../app/models/Category.php';
 require __DIR__.'/../app/controllers/MainController.php';
 require __DIR__.'/../app/controllers/CatalogController.php';
 require __DIR__.'/../app/controllers/CartController.php';

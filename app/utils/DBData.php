@@ -51,7 +51,7 @@ class DBData {
      * @return Category
      */
     public function getCategoryDetails($categoryId) {
-        // TODO
+
     }
     
     /**
@@ -80,7 +80,11 @@ class DBData {
      * @return Category[]
      */
     public function getHomeCategories() {
-        // TODO
+        $sql = 'SELECT * FROM category WHERE home_order > 0 ORDER BY home_order ASC LIMIT 5';
+        $pdoStatement = $this->dbh->query($sql);
+        $categories = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Category');
+
+        return $categories;
     }
     
     /**

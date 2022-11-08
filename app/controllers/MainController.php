@@ -3,9 +3,14 @@
 class MainController
 {
     public function home()
-    {
+    { 
+        $dbdata = new DBData;
+        $categories = $dbdata->getHomeCategories();
+        dump($categories);
+        
         $this->show('home', [
-            'title' => 'Dans les shoe'
+            'title' => 'Dans les shoe',
+            'categories' => $categories
         ]);
     }
 
